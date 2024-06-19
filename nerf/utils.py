@@ -1453,7 +1453,7 @@ class Trainer(object):
 
         text_z = torch.cat(text_z, dim=0)
 
-        self.guidance["SD"].visualize(text_z, pred_rgbs, self.epoch, as_latent)
+        self.guidance["zero123"].visualize(data, text_z, self.epoch, pred_rgbs)
 
         average_loss = total_loss / self.local_step
         self.stats["loss"].append(average_loss)
